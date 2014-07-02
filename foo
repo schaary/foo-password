@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+# encoding: utf-8
+
+
+require 'base64'
+
+puts '{MD5}' + Base64.encode64(ARGV[0].to_s.unpack('a2'*(ARGV[0].to_s.size/2)).collect {|i| i.hex.chr }.join)
